@@ -1,24 +1,32 @@
-<h1>Listing plunderings</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<table>
-  <thead>
-    <tr>
-      <th>Pirate</th>
-      <th>Loot</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
 
+
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <div class="page-header">
+  <h1>Pirate Booty <small>a collection of plunderings and pillages</small></h1>
+
+<table class="table table-hover">
+
+
+  <th><h3><strong>Pirates</h3></strong></th>
+  <th><h3><strong>Loot</h3></strong></th>
   <tbody>
     <% @plunderings.each do |plundering| %>
       <tr>
-        <p><td><%= plundering.pirate.name %></td></p>
-       <p> <td><%= plundering.loot.name%></td></p>
-        <td><%= link_to 'Show', plundering %></td>
-        <td><%= link_to 'Edit', edit_plundering_path(plundering) %></td>
-        <td><%= link_to 'Destroy', plundering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <p><td><h3><strong><%= plundering.pirate.name %></strong></h3></td></p>
+      <p> <td><h4><strong><em><%= plundering.loot.name%></em></h4></strong></td></p>
+      <div class="btn-group">
+      <td><button class="btn-info"><%= link_to 'Show', plundering %></button></td>
+      <td><button class="btn-info"><%= link_to 'Edit', edit_plundering_path(plundering) %></button>
+      </td><td><button class="btn-danger"><%= link_to 'Destroy', plundering, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+      </div>
       </tr>
     <% end %>
   </tbody>
@@ -26,7 +34,8 @@
 
 <br>
 
-<%= link_to 'New Pirate', new_pirate_path %>
-<%= link_to 'New Loot', new_loot_path %>
+<td><button class="btn-success"><%= link_to 'New Pirate', new_pirate_path %></button></td>
+<td><button class="btn-success"><%= link_to 'New Loot', new_loot_path %></button></td>
 
-<%= link_to 'New Plundering', new_plundering_path %>
+<td><button class="btn-success"><%= link_to 'New Plundering', new_plundering_path %></button></td>
+</html>
