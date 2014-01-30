@@ -1,0 +1,24 @@
+<%= form_for(@plundering) do |f| %>
+  <% if @plundering.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plundering.errors.count, "error") %> prohibited this plundering from being saved:</h2>
+
+      <ul>
+      <% @plundering.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.select :pirate_id, Pirate.all.collect { |p| [ p.name, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.select :loot_id, Loot.all.collect { |p| [ p.name, p.id ] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

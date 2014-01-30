@@ -1,0 +1,2 @@
+module PlunderingsHelper
+end

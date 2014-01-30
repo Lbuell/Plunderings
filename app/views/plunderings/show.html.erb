@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pirate:</strong>
+  <%= @plundering.pirate.name %>
+</p>
+
+<p>
+  <strong>Loot:</strong>
+  <%= @plundering.loot.name %>
+</p>
+
+<%= link_to 'Edit', edit_plundering_path(@plundering) %> |
+<%= link_to 'Back', plunderings_path %>

@@ -1,0 +1,32 @@
+<h1>Listing plunderings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pirate</th>
+      <th>Loot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plunderings.each do |plundering| %>
+      <tr>
+        <p><td><%= plundering.pirate.name %></td></p>
+       <p> <td><%= plundering.loot.name%></td></p>
+        <td><%= link_to 'Show', plundering %></td>
+        <td><%= link_to 'Edit', edit_plundering_path(plundering) %></td>
+        <td><%= link_to 'Destroy', plundering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pirate', new_pirate_path %>
+<%= link_to 'New Loot', new_loot_path %>
+
+<%= link_to 'New Plundering', new_plundering_path %>
